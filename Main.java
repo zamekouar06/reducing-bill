@@ -10,11 +10,14 @@ class Main {
 
     System.out.println("Your pin number?...");
     int pin = scan.nextInt();
+
+    int result = pay(bill);
+    System.out.println("Your bill has reduced to, $" + result);
   }
-  public static int pay(int bill){
-    if(bill > 0);{
-      return bill - pay(1 - pay);
-    }else{
+   public static int pay(int bill) {
+    if (bill > 0) {
+      return bill * pay(bill - 1);
+    } else {
       return 0;
     }
   }
